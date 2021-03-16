@@ -7,4 +7,18 @@
 # blackjack(5,6,7) --> 18
 # blackjack(9,9,9) --> 'BUST'
 # blackjack(9,9,11) --> 19
+import math
 
+def blackjack (x,y,z):
+    _sum = x + y + z
+    if  _sum <= 21:
+        return _sum
+    elif _sum > 21 and x == 11 or y == 11 or z == 11:
+        return _sum - 10
+    elif _sum > 21:
+        return 'BUST'
+
+
+print(blackjack(5,6,7))
+print(blackjack(9,9,9))
+print(blackjack(9,9,11))
